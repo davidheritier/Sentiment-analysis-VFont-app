@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}">
+
+  {% if title %}
+    <title>Moving | {{ title }}</title>
+  {% else %}
+    <title>Moving</title>
+  {% endif %}
+</head>
+
+
+
+<body>
+  <header>
+    {% block header %}
+      <a href="/">
+        <h1>Moving</h1>
+      </a>
+      <a id="collection " href="/collection">Collection</a>
+    {% endblock header %}
+  </header>
+
+  <main>
+    {% block content %}
+    {% endblock content %}
+  </main>
+
+  <footer>
+    {% block footer %}
+    {% endblock footer %}
+  </footer>
+</body>
+
+</html>

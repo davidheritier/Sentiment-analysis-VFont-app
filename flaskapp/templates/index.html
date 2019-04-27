@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block head %}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/p5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/addons/p5.dom.min.js"></script>
+  <!-- <script src="{{ url_for('static', filename='sketch.js')}}"></script> -->
+{% endblock head %}
+
+{% block content %}
+<form method="POST" action="">
+  {{ form.hidden_tag() }}
+    {{ form.user_input(placeholder="Enter your text", autofocus="True", rows="5") }}
+  {{ form.submit }}
+</form>
+{% endblock content %}

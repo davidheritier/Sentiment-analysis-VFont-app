@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  {% for entries in entry %}
+    <p style="font-variation-settings: 'wght'{{ entries.value01 }}, 'CNTR'{{ entries.value02 }}, 'slnt'{{ entries.value03 }}">
+      {{ entries.txt }}
+    </p>
+  {% endfor %}
+{% endblock content %}
