@@ -1,4 +1,4 @@
-from flask import render_template, url_for, redirect
+from flask import render_template, url_for, redirect, request, jsonify
 from flaskapp import app
 from flaskapp import db
 from flaskapp.form import EntryForm, GetFont
@@ -35,3 +35,10 @@ def collection():
     entry = reversed(Entry.query.all())
 
     return render_template('collection.html', title='Collection', entry=entry)
+
+
+@app.route('/textsentiment', methods=['POST'])
+def add_numbers():
+    content = request.json
+    value = content["value"]
+    return jsonify(result=value)
