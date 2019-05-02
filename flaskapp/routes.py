@@ -3,6 +3,7 @@ from flaskapp import app
 from flaskapp import db
 from flaskapp.form import EntryForm, GetFont
 from flaskapp.model import Entry
+from tb_function import tb_function
 # from flaskapp.process import process, getUserInput, getEmotionalCursors, setVariations
 
 
@@ -41,4 +42,12 @@ def collection():
 def add_numbers():
     content = request.json
     value = content["value"]
-    return jsonify(result=value)
+
+    # txt.sentiment.polarity, txt.sentiment.subjectivity, txt.sentiment.polarity * txt.sentiment.subjectivity
+
+    text_sentiment = tb_function(value)
+
+    return jsonify(polarity=text_sentiment.polarity,
+                   subjectivity=text_sentiment.subjectivity,
+                   polarity_x_subjectivity=text_sentiment.polarity * text_sentiment.subjectivity
+                   )
