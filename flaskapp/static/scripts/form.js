@@ -32,9 +32,8 @@ class TextAreaContentChangeListener {
             },
             body: JSON.stringify({value: valueToSend})
         }).then(value => {
-            console.log(value);
             return value.json().then(value1 => {
-                console.log(value1)
+                console.info(value1)
             })
         })
     }
