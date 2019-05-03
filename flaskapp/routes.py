@@ -47,7 +47,7 @@ def add_numbers():
 
     text_sentiment = tb_function(value)
 
-    return jsonify(polarity=text_sentiment.polarity,
-                   subjectivity=text_sentiment.subjectivity,
-                   polarity_x_subjectivity=text_sentiment.polarity * text_sentiment.subjectivity
-                   )
+    return jsonify(
+        polarity=text_sentiment.polarity,
+        subjectivity=text_sentiment.subjectivity,
+    )

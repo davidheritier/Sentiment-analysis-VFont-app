@@ -1,29 +1,29 @@
-class TextAreaContentChangeListener {
+class TextareaContentChangeListener {
 
-    _userIdValue = "";
+    _textAreaValue = "";
     textAreaHTMLElement;
 
-    constructor(textAreaQuerySelector) {
+    constructor(textareaQuerySelector) {
 
         if (!window.fetch) console.error("no fetch support in this browser");
 
-        this.textAreaHTMLElement = document.querySelector(textAreaQuerySelector);
+        this.textAreaHTMLElement = document.querySelector(textareaQuerySelector);
 
         this.textAreaHTMLElement.addEventListener("keyup", () => {
-            const new_userIdValue = this.textAreaHTMLElement.value;
+            const newTextAreaValue = this.textAreaHTMLElement.value;
 
-            if (this._userIdValue !== new_userIdValue) this.userIdValue = new_userIdValue
+            if (this._textAreaValue !== newTextAreaValue) this.textAreaValue = newTextAreaValue
         });
     }
 
-    set userIdValue(value) {
-        this._userIdValue = value;
-        this._sendNewUserIdValue()
+    set textAreaValue(value) {
+        this._textAreaValue = value;
+        this._sendNewTextareaValue()
     }
 
-    _sendNewUserIdValue() {
+    _sendNewTextareaValue() {
 
-        const valueToSend = this._userIdValue;
+        const valueToSend = this._textAreaValue;
 
         window.fetch("/textsentiment", {
             method: 'post',
@@ -34,12 +34,31 @@ class TextAreaContentChangeListener {
             body: JSON.stringify({
                 value: valueToSend
             })
-        }).then(value => {
-            return value.json().then(value1 => {
-                console.info(value1)
+        }).then(valueFromFlaskApp => {
+            return valueFromFlaskApp.json().then(JSONFromValueFromFlaskApp => {
+                console.info(JSONFromValueFromFlaskApp);
+
+                this._setCssFontVariablePropertyOfTextarea(JSONFromValueFromFlaskApp)
             })
         })
     }
+
+    _setCssFontVariablePropertyOfTextarea(JSONSentimentAnalyse) {
+
+        const polarity      = JSONSentimentAnalyse.polarity;
+        const subjectivity  = JSONSentimentAnalyse.subjectivity;
+
+        //  weight = str(int((tb.sentiment.polarity * 100) * (tb.sentiment.subjectivity * 100) / 10))
+        const value1 = (polarity * 100) * (subjectivity * 100) / 100;
+
+        //  contrast = str(int(500 + (tb.sentiment.subjectivity / 2 * 1000)))
+        const value2 = 500 + (subjectivity / 2 * 1000);
+
+        //  slant = str(int(tb.sentiment.polarity * 1000))
+        const value3 = polarity * 1000;
+
+        this.textAreaHTMLElement.style.fontVariationSettings = `'wght'${value1}, 'CNTR'${value2}, 'slnt'${value3}`;
+    }
 }
 
-new TextAreaContentChangeListener("#user_input");
+new TextareaContentChangeListener("#user_input");
