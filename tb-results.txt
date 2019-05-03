@@ -1,0 +1,1 @@
+Hello I am very happy to see you are you pleased?polarity: 0.75	subjectivity: 1.0	polarity * subjectivity: 0.75
