@@ -4,11 +4,15 @@ from textblob import TextBlob
 # file = open('tb-results.txt','a')
 
 
-txt = "Hello I am very happy to see you are you pleased?"
+txt = "A week since the bombings that killed at least 250 people, Cardinal Malcolm Ranjith, Sri Lanka’s most senior Catholic, had ordered the country’s churches not to hold services until police could be sure they would not be attacked."
 tb = TextBlob(txt)
 pol = str(tb.sentiment.polarity)
 sub = str(tb.sentiment.subjectivity)
 mul = str(tb.sentiment.polarity * tb.sentiment.subjectivity)
+
+slant = str(int(tb.sentiment.polarity * 1000))
+contrast = str(int(500 + (tb.sentiment.subjectivity / 2 * 1000)))
+weight = str(int((tb.sentiment.polarity * 100) * (tb.sentiment.subjectivity * 100) / 10))
 
 
 # file.write(txt + '\r')
@@ -17,4 +21,5 @@ mul = str(tb.sentiment.polarity * tb.sentiment.subjectivity)
 # file.write('\tpolarity * subjectivity: ' + mul)
 # file.write('\r\r')
 
-print('polarity: ' + pol + ', subjectivity: ' + sub + ', multiply: ' + mul)
+print('polarity: ' + pol + '\t subjectivity: ' + sub + '\t pol x sub: ' + mul)
+print('slant: ' + slant + '\t contrast: ' + contrast + '\t weight: ' + weight)
