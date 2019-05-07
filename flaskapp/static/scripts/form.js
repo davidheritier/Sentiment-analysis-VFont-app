@@ -44,18 +44,19 @@ class TextareaContentChangeListener {
   }
 
   _setCssFontVariablePropertyOfTextarea(JSONSentimentAnalyse) {
-
+    // polarity = {-1, 1}
+    // subjectivity = {0, 1}
     const polarity = JSONSentimentAnalyse.polarity;
     const subjectivity = JSONSentimentAnalyse.subjectivity;
 
-    // weight = str(int((tb.sentiment.polarity * 100) * (tb.sentiment.subjectivity * 100) / 10))
-    const value1 = 400 + ((polarity * 100) * (subjectivity * 100) / 10);
+    // weight
+    const value1 = 500 - (polarity * subjectivity * 1000);
 
-    // contrast = str(int(500 + (tb.sentiment.subjectivity / 2 * 1000)))
-    const value2 = 500 - ((subjectivity * 1000) / 2);
+    // contrast
+    const value2 = 500 + polarity * 500;
 
-    // slant = str(int(tb.sentiment.polarity * 1000))
-    const value3 = 500 - ((polarity * 1000) / 2);
+    // slant
+    const value3 = subjectivity * 1000;
 
     this.textAreaHTMLElement.style.fontVariationSettings = `'wght'${value1}, 'CNTR'${value2}, 'slnt'${value3}`;
   }
