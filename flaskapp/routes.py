@@ -51,15 +51,17 @@ def collection():
 @app.route('/save', methods=['POST'])
 def save_font():
     content = request.json
+
     text    = content["text"]
     value1  = content["value1"]
     value2  = content["value2"]
     value3  = content["value3"]
 
-    print(text)
-    print(value1)
-    print(value2)
-    print(value3)
+    entry_font_parameters = Entry(txt=text, value1=value1, value2=value2, value3=value3)
+
+    db.session.add(entry_font_parameters)
+
+    db.session.commit()
 
     return jsonify(
         saved=True
