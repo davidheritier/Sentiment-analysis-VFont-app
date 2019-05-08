@@ -4,7 +4,7 @@ from textblob import TextBlob
 # file = open('tb-results.txt','a')
 
 
-txt = "A week since the bombings that killed at least 250 people, Cardinal Malcolm Ranjith, Sri Lanka’s most senior Catholic, had ordered the country’s churches not to hold services until police could be sure they would not be attacked."
+txt = "fuck this shit motherfucker shit good news"
 tb = TextBlob(txt)
 pol = str(tb.sentiment.polarity)
 sub = str(tb.sentiment.subjectivity)

@@ -7,10 +7,11 @@
 {% endblock head %}
 
 {% block content %}
-<form method="POST" action="">
+<form method="POST" action="" id="font-viewer">
   {{ form.hidden_tag() }}
     {{ form.user_input(placeholder="Enter your text", autofocus="True", rows="5") }}
   {{ form.submit }}
 </form>
 <script type="text/javascript" src="{{ url_for('static',filename='scripts/form.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static',filename='scripts/saveFontParameters.js') }}"></script>
 {% endblock content %}
