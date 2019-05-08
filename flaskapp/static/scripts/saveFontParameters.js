@@ -20,7 +20,20 @@ class SaveFontParameters {
     this.submitElement.addEventListener("click", (ev) => {
       ev.preventDefault();
 
-      const text = this.textareaHTMLElement.value;
+      this._sendFontParameters();
+    });
+
+    window.addEventListener("keydown", (e) => {
+      if (e.keyCode === 83 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
+        e.preventDefault();
+
+        this._sendFontParameters();
+      }
+    })
+  }
+
+  _sendFontParameters() {
+    const text = this.textareaHTMLElement.value;
       const variationSettingsValue = this.textareaHTMLElement.style.fontVariationSettings;
 
       if (text.length > 0 && variationSettingsValue.length > 0) {
@@ -31,12 +44,11 @@ class SaveFontParameters {
         const CNTR = variationSettingsParametersMatches[1][1];
         const slnt = variationSettingsParametersMatches[2][1];
 
-        this._sendFontParameters(text, wght, CNTR, slnt);
+        this._fontParametersRequest(text, wght, CNTR, slnt);
       }
-    });
   }
 
-  _sendFontParameters(text, value1, value2, value3) {
+  _fontParametersRequest(text, value1, value2, value3) {
 
     window.fetch("/save", {
       method: 'post',
