@@ -1,20 +1,20 @@
+# run
+
 ## install dependencies
 
-Flask
+pip install
+- Flask
+- Flask-SQLAlchemy
+- Flask-WTF
+- textblob
 
-Flask-SQLAlchemy
 
-Flask-WTF
-
-textblob
-
-## run
-
-start web app
+## start web app
 
 ```
 python3 run.py
 ```
 
 ## open address
+
 localhost:5000
