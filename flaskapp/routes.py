@@ -4,7 +4,6 @@ from flaskapp import db
 from flaskapp.form import EntryForm, GetFont
 from flaskapp.model import Entry
 from tb_function import tb_function
-# from flaskapp.process import process, getUserInput, getEmotionalCursors, setVariations
 
 
 # Index page

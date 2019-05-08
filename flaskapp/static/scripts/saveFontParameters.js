@@ -13,6 +13,7 @@ class SaveFontParameters {
   /**
    * @param {String} formQuerySelector HTMLFormElement query selector
    * */
+
   constructor(formQuerySelector) {
 
     if (!window.fetch) console.error("no fetch support in this browser");
@@ -66,18 +67,18 @@ class SaveFontParameters {
 
   _sendFontParameters() {
     const text = this.textareaHTMLElement.value;
-      const variationSettingsValue = this.textareaHTMLElement.style.fontVariationSettings;
+    const variationSettingsValue = this.textareaHTMLElement.style.fontVariationSettings;
 
-      if (text.length > 0 && variationSettingsValue.length > 0) {
+    if (text.length > 0 && variationSettingsValue.length > 0) {
 
-        const variationSettingsParametersMatches = [...variationSettingsValue.matchAll(/\"[^"]*\"\s(\d+\.?\d*)/gm)];
+      const variationSettingsParametersMatches = [...variationSettingsValue.matchAll(/\"[^"]*\"\s(\d+\.?\d*)/gm)];
 
-        const wght = variationSettingsParametersMatches[0][1];
-        const CNTR = variationSettingsParametersMatches[1][1];
-        const slnt = variationSettingsParametersMatches[2][1];
+      const wght = variationSettingsParametersMatches[0][1];
+      const CNTR = variationSettingsParametersMatches[1][1];
+      const slnt = variationSettingsParametersMatches[2][1];
 
-        this._fontParametersRequest(text, wght, CNTR, slnt);
-      }
+      this._fontParametersRequest(text, wght, CNTR, slnt);
+    }
   }
 
   _fontParametersRequest(text, value1, value2, value3) {
@@ -89,7 +90,7 @@ class SaveFontParameters {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        text:   text,
+        text: text,
         value1: value1,
         value2: value2,
         value3: value3,
@@ -98,7 +99,7 @@ class SaveFontParameters {
       return valueFromFlaskApp.json().then(JSONFromValueFromFlaskApp => {
         console.info(JSONFromValueFromFlaskApp);
 
-        if(JSONFromValueFromFlaskApp.saved === true) {
+        if (JSONFromValueFromFlaskApp.saved === true) {
           this._setSubmitButtons("getFont")
         }
       })
@@ -109,12 +110,12 @@ class SaveFontParameters {
    * @param status {"save" | "getFont"}
    * */
   _setSubmitButtons(status) {
-    if(status === "save") {
+    if (status === "save") {
       this.submitElement.style.display = "block";
       this.getFontButton.style.display = "none";
       this._buttonStatus = "save"
     }
-    if(status === "getFont") {
+    if (status === "getFont") {
       this.submitElement.style.display = "none";
       this.getFontButton.style.display = "inline-block";
       this._buttonStatus = "getFont"
