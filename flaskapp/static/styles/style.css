@@ -5,7 +5,7 @@
 }
 
 html {
-  font-family: sans-serif;
+  font-family: system-ui;
   font-size: 4vw;
   background: white;
 }
@@ -51,7 +51,7 @@ main {
 main p {
   font-family: "Moving";
   margin: 0 auto 2rem auto;
-  font-variation-settings: 'wght'400, 'CNTR'500, 'slnt'500;
+  font-variation-settings: 'wght'500, 'CNTR'500, 'slnt'0;
   font-size: 1.1rem;
   line-height: 1.1rem;
 }
@@ -65,7 +65,7 @@ textarea {
   border: 1px solid black;
   outline: none;
   font-family: "Moving";
-  font-variation-settings: 'wght'400, 'CNTR'500, 'slnt'500;
+  font-variation-settings: 'wght'500, 'CNTR'500, 'slnt'0;
   font-size: 1.1rem;
   line-height: 1.1rem;
 }

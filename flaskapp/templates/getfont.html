@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block content %}
-  <p>{{ entry.txt }}</p>
+  <p style="font-variation-settings: 'wght'{{ entry.value01 }}, 'CNTR'{{ entry.value02 }}, 'slnt'{{ entry.value03 }}">{{ entry.txt }}</p>
 
   <form method="POST" action="">
     {{ form.submit }}

@@ -43,22 +43,23 @@ class TextareaContentChangeListener {
     })
   }
 
-  _setCssFontVariablePropertyOfTextarea(JSONSentimentAnalyse) {
+  _setCssFontVariablePropertyOfTextarea(JSONSentimentAnalysis) {
     // polarity = {-1, 1}
+    const polarity = JSONSentimentAnalysis.polarity;
     // subjectivity = {0, 1}
-    const polarity = JSONSentimentAnalyse.polarity;
-    const subjectivity = JSONSentimentAnalyse.subjectivity;
+    const subjectivity = JSONSentimentAnalysis.subjectivity;
 
-    // weight
-    const value1 = 500 - (polarity * subjectivity * 1000);
+    // weight = 500 - ({-1, 1} * {0, 1} * 500) = 500 + {-500, 500} = {0, 1000}
+    const value1 = 500 + (polarity * subjectivity * 500);
 
-    // contrast
-    const value2 = 500 + polarity * 500;
+    // contrast = 500 + ({-1, 1} * 500) = 500 + {-500, 500} = {0, 1000}
+    const value2 = 500 + (polarity * 500);
 
-    // slant
+    // slant = {0, 1} * 1000 = {0, 1000}
     const value3 = subjectivity * 1000;
 
     this.textAreaHTMLElement.style.fontVariationSettings = `'wght'${value1}, 'CNTR'${value2}, 'slnt'${value3}`;
+    this.textAreaHTMLElement.style.transition = "250ms";
   }
 }
 
