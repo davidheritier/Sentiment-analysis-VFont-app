@@ -1,12 +1,12 @@
 ## install dependencies
 
-Flask==1.0.2
+Flask
 
-Flask-SQLAlchemy==2.3.2
+Flask-SQLAlchemy
 
-Flask-WTF==0.14.2
+Flask-WTF
 
-textblob==0.15.3
+textblob
 
 ## run
 
@@ -15,3 +15,6 @@ start web app
 ```
 python3 run.py
 ```
+
+## open address
+localhost:5000
