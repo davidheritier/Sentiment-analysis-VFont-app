@@ -36,13 +36,14 @@ class SaveFontParameters {
       if (this._buttonStatus === "getFont") this._setSubmitButtons("save")
     });
 
-    window.addEventListener("keydown", (e) => {
-      if (e.keyCode === 83 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
-        e.preventDefault();
-
-        this._sendFontParameters();
-      }
-    })
+    // todo bug: button get font disparait
+    // window.addEventListener("keydown", (e) => {
+    //   if (e.keyCode === 83 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
+    //     e.preventDefault();
+    //
+    //     this._sendFontParameters();
+    //   }
+    // })
   }
 
   _createGetFontButton() {
