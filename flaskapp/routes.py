@@ -46,7 +46,7 @@ def collection():
 
     return render_template('collection.html', title='Collection', entry=entry)
 
-# save font parameters
+# Save font parameters
 @app.route('/save', methods=['POST'])
 def save_font():
     content = request.json

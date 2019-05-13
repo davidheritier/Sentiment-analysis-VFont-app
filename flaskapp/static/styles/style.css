@@ -1,107 +1,63 @@
+/* Font */
 @font-face {
   font-family: "Moving";
   src: url("MovingGX.ttf");
   font-variation-settings: 'wght'0 1000, 'CNTR'0 1000, 'slnt'0 1000;
 }
 
+/* Font root size */
 html {
-  font-family: system-ui;
-  font-size: 4vw;
-  background: white;
+  font-size: 5vw;
 }
 
 body {
-  margin: 0;
+  margin: 1rem auto 0;
   padding: 0;
 }
 
-header {
-  width: 70%;
-  margin: 1rem auto 0 auto;
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
+/* Width and margins */
+header, main, footer {
+  width: 90%;
+  margin: 0 auto;
 }
 
-h1, h2 {
-  margin: 0;
-  font-size: 1rem;
-  font-weight: normal;
-}
-
-a, a h1:hover {
+/* Links */
+a {
   text-decoration: none;
-  font-style: italic;
-  color: inherit;
 }
 
-a h1 {
-  font-style: normal;
+/* Buttons */
+.get-font-button,
+input#submit {
+  border: none;
+  box-shadow: none;
+  outline: none;
+  cursor: pointer;
 }
 
-a:hover {
-  font-style: normal;
+/* Font-size */
+textarea, main p, input#submit, #home, #collection, .get-font-button {
+  font-size: 1rem;
 }
 
-main {
-  width: 70%;
-  margin: 2rem auto;
-}
-
-main p {
+/* Font */
+textarea, main p {
   font-family: "Moving";
-  margin: 0 auto 2rem auto;
   font-variation-settings: 'wght'500, 'CNTR'500, 'slnt'0;
-  font-size: 1.1rem;
-  line-height: 1.1rem;
+}
+
+#collection {
+  float: right;
 }
 
 textarea {
   display: block;
   width: 100%;
-  margin: 0 0 1rem 0;
-  padding: 0 .25rem;
-  box-sizing: border-box;
-  border: 1px solid black;
+  border: none;
+  resize: none;
   outline: none;
-  font-family: "Moving";
-  font-variation-settings: 'wght'500, 'CNTR'500, 'slnt'0;
-  font-size: 1.1rem;
-  line-height: 1.1rem;
 }
 
 textarea::placeholder {
   color: lightgrey;
-}
-
-.get-font-button,
-input#submit {
-  font-size: 1rem;
-  padding: .25rem .5rem;
-  border: none;
-  box-shadow: 1px 1px black;
-  background: white;
-  outline: none;
-  cursor: pointer;
-}
-
-input#submit:active {
-  box-shadow: -1px -1px black;
-}
-
-footer {
-  display: none;
-  width: 70%;
-  margin: 0 auto 1rem auto;
-}
-
-@media only screen and (max-width:620px) {
-  header, main, footer {
-    width: 90%;
-    font-size: 6vw;
-  }
-
-  textarea, input[type=submit] {
-    font-size: inherit;
-  }
 }

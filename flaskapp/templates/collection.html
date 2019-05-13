@@ -1,5 +1,9 @@
 {% extends "layout.html" %}
 
+{% block header %}
+<a id="home" href="/">🏠</a>
+{% endblock header %}
+
 {% block content %}
   {% for entries in entry %}
     <p style="font-variation-settings: 'wght'{{ entries.value1 }}, 'CNTR'{{ entries.value2 }}, 'slnt'{{ entries.value3 }}">
