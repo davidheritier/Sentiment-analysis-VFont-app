@@ -5,7 +5,7 @@ from wtforms.validators import DataRequired
 
 class EntryForm(FlaskForm):
     user_input = TextAreaField('Enter your text', validators=[DataRequired()])
-    submit = SubmitField('💾')
+    submit = SubmitField('Save')
 
 class GetFont(FlaskForm):
-    submit = SubmitField('📦')
+    submit = SubmitField('Get font')

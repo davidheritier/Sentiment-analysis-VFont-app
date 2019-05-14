@@ -5,31 +5,26 @@
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}">
 
   {% if title %}
-    <title>Moving | {{ title }}</title>
+    <title>MARTy-10^9 | {{ title }}</title>
   {% else %}
-    <title>Moving</title>
+    <title>MARTy-10^9</title>
   {% endif %}
 </head>
 
 
 
 <body>
-  <header>
-    {% block header %}
-    <a id="home" href="/">🏠</a>
-    <a id="collection" href="/collection">📚</a>
-    {% endblock header %}
-  </header>
+<header>
+  {% block header %}
+    <a id="home" href="/"><h1>MARTy-10^9</h1></a>
+    <a id="collection" href="/collection"><button>Collection</button></a>
+  {% endblock header %}
+</header>
 
   <main>
     {% block content %}
     {% endblock content %}
   </main>
-
-  <footer>
-    {% block footer %}
-    {% endblock footer %}
-  </footer>
 </body>
 
 </html>

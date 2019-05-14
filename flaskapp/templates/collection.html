@@ -1,8 +1,9 @@
 {% extends "layout.html" %}
 
 {% block header %}
-<a id="home" href="/">🏠</a>
+  <a id="home" href="/"><h1>MARTy-10^9</h1></a>
 {% endblock header %}
+
 
 {% block content %}
   {% for entries in entry %}
@@ -10,4 +11,6 @@
       {{ entries.txt }}
     </p>
   {% endfor %}
+
+  You have reached the end of the collection. <a href="#">Go back up.</a>
 {% endblock content %}

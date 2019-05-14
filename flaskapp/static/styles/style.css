@@ -5,60 +5,118 @@
   font-variation-settings: 'wght'0 1000, 'CNTR'0 1000, 'slnt'0 1000;
 }
 
-/* Font root size */
-html {
-  font-size: 5vw;
-}
-
-body {
-  margin: 1rem auto 0;
-  padding: 0;
-}
-
-/* Width and margins */
-header, main, footer {
-  width: 90%;
-  margin: 0 auto;
-}
-
-/* Links */
-a {
+html, header, button, input, h1, a {
+  font-family: system-ui;
+  font-weight: normal;
+  font-size: 2vh;
+  color: black;
   text-decoration: none;
 }
 
-/* Buttons */
-.get-font-button,
-input#submit {
-  border: none;
-  box-shadow: none;
-  outline: none;
-  cursor: pointer;
-}
-
-/* Font-size */
-textarea, main p, input#submit, #home, #collection, .get-font-button {
-  font-size: 1rem;
-  line-height: 1.1rem;
-}
-
-/* Font */
-textarea, main p {
+textarea, p {
   font-family: "Moving";
-  font-variation-settings: 'wght'500, 'CNTR'500, 'slnt'0;
+  font-variation-settings: 'wght'800, 'CNTR'500, 'slnt'0;
+  font-size: 7em;
+  line-height: 1em;
+}
+
+button:hover, input:hover {
+  color: white;
+}
+
+/* Width */
+header, main {
+  width: 90%;
+}
+
+textarea {
+  width: 100%;
+}
+
+/* Height */
+header {
+  height: 1.4em;
+}
+
+/* Position */
+input {
+  position: fixed;
+  bottom: 2em;
+}
+
+h1 {
+  float: left;
 }
 
 #collection {
   float: right;
 }
 
+/* Margin */
+header {
+  margin: 2em auto 0;
+}
+
+main {
+  margin: 2em auto;
+}
+
+h1 {
+  margin: 0;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+/* Padding */
+h1 {
+  padding: .15em 0 0;
+}
+
+button, input {
+  padding: .1em .5em .2em;
+}
+
 textarea {
-  display: block;
-  width: 100%;
+  padding: 0;
+}
+
+/* Border */
+button, input {
+  border: 1px solid black;
+  border-radius: 1em;
+}
+
+textarea {
   border: none;
+}
+
+/* Background */
+button, input {
+  background: white;
+}
+
+button:hover, input:hover {
+  background: black;
+}
+
+/* Button */
+button, input {
+  outline: none;
+  cursor: pointer;
+}
+
+/* Textarea */
+textarea {
   resize: none;
   outline: none;
+  box-sizing: border-box;
 }
 
 textarea::placeholder {
+  font-family: system-ui;
+  font-weight: lighter;
+  font-variation-settings: 'wght'100;
   color: lightgrey;
 }

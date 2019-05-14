@@ -5,15 +5,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/addons/p5.dom.min.js"></script>
 {% endblock head %}
 
-{% block header %}
-{% endblock header %}
-
 {% block content %}
 <form method="POST" action="" id="font-viewer">
   {{ form.hidden_tag() }}
-    {{ form.user_input(placeholder="Enter your text", autofocus="True", rows="7") }}
+    {{ form.user_input(placeholder="Enter your text", autofocus="True", rows="5") }}
   {{ form.submit }}
-  <a id="collection" href="/collection">📚</a>
 </form>
 
 <script type="text/javascript" src="{{ url_for('static',filename='scripts/form.js') }}"></script>

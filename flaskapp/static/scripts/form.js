@@ -50,7 +50,7 @@ class TextareaContentChangeListener {
     const subjectivity = JSONSentimentAnalysis.subjectivity;
 
     // weight = 500 - ({-1, 1} * {0, 1} * 500) = 500 + {-500, 500} = {0, 1000}
-    const value1 = 1000 - (subjectivity * 1000) + (polarity * 1000);
+    const value1 = 800 - (subjectivity * 400) + (polarity * 400);
 
     // contrast = 500 + ({-1, 1} * 500) = 500 + {-500, 500} = {0, 1000}
     const value2 = 500 + (polarity * 500);

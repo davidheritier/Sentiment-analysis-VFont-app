@@ -51,7 +51,7 @@ class SaveFontParameters {
     this.getFontButton = document.createElement("button");
 
     this.getFontButton.className = "get-font-button";
-    this.getFontButton.innerText = "📦";
+    this.getFontButton.innerText = "Get font";
     this.getFontButton.style.display = "none";
 
     this.getFontButton.addEventListener("click", (e) => {
