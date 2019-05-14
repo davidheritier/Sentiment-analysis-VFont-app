@@ -7,9 +7,7 @@
 
 html, header, button, input, h1, a {
   font-family: system-ui;
-  font-weight: normal;
   font-size: 2vh;
-  color: black;
   text-decoration: none;
 }
 
@@ -20,8 +18,40 @@ textarea, p {
   line-height: 1em;
 }
 
-button:hover, input:hover {
+textarea::placeholder {
+  font-family: system-ui;
+  font-weight: lighter;
+  font-variation-settings: 'wght'100;
+}
+
+button, button:hover, input, input:hover {
   color: white;
+}
+
+/* Font color */
+html, header, h1, a {
+  color: black;
+}
+
+a:hover, h1:hover {
+  color: blue;
+}
+
+textarea, p {
+  color: black;
+}
+
+textarea::placeholder {
+  color: lightgrey;
+}
+
+/* Background color */
+button, input {
+  background: black;
+}
+
+button:hover, input:hover {
+  background: blue;
 }
 
 /* Width */
@@ -53,15 +83,11 @@ h1 {
 }
 
 /* Margin */
-header {
-  margin: 2em auto 0;
-}
-
-main {
+header, main {
   margin: 2em auto;
 }
 
-h1 {
+h1, textarea {
   margin: 0;
 }
 
@@ -84,7 +110,7 @@ textarea {
 
 /* Border */
 button, input {
-  border: 1px solid black;
+  border: none;
   border-radius: 1em;
 }
 
@@ -92,31 +118,18 @@ textarea {
   border: none;
 }
 
-/* Background */
-button, input {
-  background: white;
-}
-
-button:hover, input:hover {
-  background: black;
+/* Outline */
+button, input, textarea {
+  outline: none;
 }
 
 /* Button */
 button, input {
-  outline: none;
   cursor: pointer;
 }
 
 /* Textarea */
 textarea {
   resize: none;
-  outline: none;
   box-sizing: border-box;
-}
-
-textarea::placeholder {
-  font-family: system-ui;
-  font-weight: lighter;
-  font-variation-settings: 'wght'100;
-  color: lightgrey;
 }
