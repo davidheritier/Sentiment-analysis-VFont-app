@@ -21,7 +21,7 @@ textarea, p {
 textarea::placeholder {
   font-family: system-ui;
   font-weight: lighter;
-  font-variation-settings: 'wght'100;
+  font-variation-settings: 'wght'50;
 }
 
 button, button:hover, input, input:hover {
@@ -34,7 +34,7 @@ html, header, h1, a {
 }
 
 a:hover, h1:hover {
-  color: blue;
+  color: grey;
 }
 
 textarea, p {
@@ -47,11 +47,11 @@ textarea::placeholder {
 
 /* Background color */
 button, input {
-  background: black;
+  background: lightgrey;
 }
 
 button:hover, input:hover {
-  background: blue;
+  background: grey;
 }
 
 /* Width */
@@ -97,11 +97,11 @@ p {
 
 /* Padding */
 h1 {
-  padding: .15em 0 0;
+  padding: .25em 0 0;
 }
 
 button, input {
-  padding: .1em .5em .2em;
+  padding: .2em .75em .3em;
 }
 
 textarea {
@@ -132,4 +132,13 @@ button, input {
 textarea {
   resize: none;
   box-sizing: border-box;
+}
+
+/* Transition */
+button:hover, input:hover {
+  transition: background 500ms;
+}
+
+h1:hover, a:hover {
+  transition: color 500ms;
 }

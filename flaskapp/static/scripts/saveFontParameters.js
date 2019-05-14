@@ -109,6 +109,7 @@ class SaveFontParameters {
   /**
    * @param status {"save" | "getFont"}
    * */
+
   _setSubmitButtons(status) {
     if (status === "save") {
       this.submitElement.style.display = "block";

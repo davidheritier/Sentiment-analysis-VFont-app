@@ -8,4 +8,4 @@ class EntryForm(FlaskForm):
     submit = SubmitField('Save')
 
 class GetFont(FlaskForm):
-    submit = SubmitField('Get font')
+    submit = SubmitField('Download font')
