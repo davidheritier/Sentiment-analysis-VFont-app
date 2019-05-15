@@ -25,17 +25,19 @@ class SaveFontParameters {
 
     this.submitElement = this.formHTMLElement.querySelector("[type='submit']");
 
-    this._createGetFontButton();
+    // this._createGetFontButton();
 
     this.submitElement.addEventListener("click", (ev) => {
       ev.preventDefault();
 
       this._sendFontParameters();
+      window.location = `${window.location.origin}/getfont`;
+
     });
 
-    this.textareaHTMLElement.addEventListener("keyup", () => {
-      if (this._buttonStatus === "getFont") this._setSubmitButtons("save")
-    });
+    // this.textareaHTMLElement.addEventListener("keyup", () => {
+    //   if (this._buttonStatus === "getFont") this._setSubmitButtons("save")
+    // });
 
     // todo bug: button get font disparait
     // window.addEventListener("keydown", (e) => {
@@ -47,23 +49,23 @@ class SaveFontParameters {
     // })
   }
 
-  _createGetFontButton() {
-    this.getFontButton = document.createElement("button");
-
-    this.getFontButton.className = "get-font-button";
-    this.getFontButton.innerText = "Get font";
-    this.getFontButton.style.display = "none";
-
-    this.getFontButton.addEventListener("click", (e) => {
-      e.preventDefault();
-
-      window.location = `${window.location.origin}/getfont`;
-
-      console.log("get font clicked")
-    });
-
-    this.formHTMLElement.appendChild(this.getFontButton)
-  }
+  // _createGetFontButton() {
+  //   this.getFontButton = document.createElement("button");
+  //
+  //   this.getFontButton.className = "get-font-button";
+  //   this.getFontButton.innerText = "Get font";
+  //   this.getFontButton.style.display = "none";
+  //
+  //   this.getFontButton.addEventListener("click", (e) => {
+  //     e.preventDefault();
+  //
+  //     window.location = `${window.location.origin}/getfont`;
+  //
+  //     console.log("get font clicked")
+  //   });
+  //
+  //   this.formHTMLElement.appendChild(this.getFontButton)
+  // }
 
   _sendFontParameters() {
     const text = this.textareaHTMLElement.value;
@@ -99,29 +101,29 @@ class SaveFontParameters {
       return valueFromFlaskApp.json().then(JSONFromValueFromFlaskApp => {
         console.info(JSONFromValueFromFlaskApp);
 
-        if (JSONFromValueFromFlaskApp.saved === true) {
-          this._setSubmitButtons("getFont")
-        }
+        // if (JSONFromValueFromFlaskApp.saved === true) {
+        //   this._setSubmitButtons("getFont")
+        // }
       })
     })
   }
 
-  /**
-   * @param status {"save" | "getFont"}
-   * */
-
-  _setSubmitButtons(status) {
-    if (status === "save") {
-      this.submitElement.style.display = "block";
-      this.getFontButton.style.display = "none";
-      this._buttonStatus = "save"
-    }
-    if (status === "getFont") {
-      this.submitElement.style.display = "none";
-      this.getFontButton.style.display = "inline-block";
-      this._buttonStatus = "getFont"
-    }
-  }
+  // /**
+  //  * @param status {"save" | "getFont"}
+  //  * */
+  //
+  // _setSubmitButtons(status) {
+  //   if (status === "save") {
+  //     this.submitElement.style.display = "block";
+  //     this.getFontButton.style.display = "none";
+  //     this._buttonStatus = "save"
+  //   }
+  //   if (status === "getFont") {
+  //     this.submitElement.style.display = "none";
+  //     this.getFontButton.style.display = "inline-block";
+  //     this._buttonStatus = "getFont"
+  //   }
+  // }
 }
 
 new SaveFontParameters("#font-viewer");

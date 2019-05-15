@@ -21,7 +21,7 @@ def index():
     #     # db.session.add(value02)
     #     # db.session.add(value03)
     #     db.session.commit()
-    #     return redirect(url_for('getfont'))
+        # return redirect(url_for('getfont'))
 
     return render_template('index.html', form=form)
 

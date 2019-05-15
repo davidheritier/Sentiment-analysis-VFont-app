@@ -69,7 +69,7 @@ header {
 }
 
 /* Position */
-input {
+input, .get-font-button {
   position: fixed;
   bottom: 2em;
 }
@@ -84,7 +84,7 @@ h1 {
 
 /* Margin */
 header, main {
-  margin: 2em auto;
+  margin: 3em auto 2em;
 }
 
 h1, textarea {
@@ -92,7 +92,7 @@ h1, textarea {
 }
 
 p {
-  margin: 0 0 1em;
+  margin: 0 0 .5em;
 }
 
 /* Padding */
