@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block header %}
-  <a id="home" href="/"><h1>MARTy-10^9</h1></a>
+<a id="home" href="/"><h1>MARTy-10^9<span class="hidden">&ensp;Machine-Augmented Responsive Typography</span></h1></a>
 {% endblock header %}
 
 
@@ -12,5 +12,7 @@
     </p>
   {% endfor %}
 
-  You have reached the end of the collection. <a href="/">Go back and add your entry.</a>
+  <footer>
+    <a href="/">You have reached the end of the collection. <span class="hidden">Go back and add your entry.</span></a>
+  </footer>
 {% endblock content %}

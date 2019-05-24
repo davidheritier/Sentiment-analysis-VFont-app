@@ -50,16 +50,16 @@ class TextareaContentChangeListener {
     const subjectivity = JSONSentimentAnalysis.subjectivity;
 
     // weight = 500 - ({-1, 1} * {0, 1} * 500) = 500 + {-500, 500} = {0, 1000}
-    const value1 = 800 - (subjectivity * 400) + (polarity * 400);
+    const value1 = 500 + polarity * 500; // subjectivity * 0.5 * polarity * 500
 
     // contrast = 500 + ({-1, 1} * 500) = 500 + {-500, 500} = {0, 1000}
-    const value2 = 500 + (polarity * 500);
+    const value2 = 500 + polarity * 500;
 
     // slant = {0, 1} * 1000 = {0, 1000}
-    const value3 = subjectivity * 1000;
+    const value3 = subjectivity * 800;
 
     this.textAreaHTMLElement.style.fontVariationSettings = `'wght'${value1}, 'CNTR'${value2}, 'slnt'${value3}`;
-    this.textAreaHTMLElement.style.transition = "250ms";
+    this.textAreaHTMLElement.style.transition = "500ms";
   }
 }
 

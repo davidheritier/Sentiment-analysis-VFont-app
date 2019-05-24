@@ -1,7 +1,7 @@
 /* Font */
 @font-face {
-  font-family: "Moving";
-  src: url("MovingGX.ttf");
+  font-family: "MARTy";
+  src: url("MARTyGX.ttf");
   font-variation-settings: 'wght'0 1000, 'CNTR'0 1000, 'slnt'0 1000;
 }
 
@@ -11,47 +11,41 @@ html, header, button, input, h1, a {
   text-decoration: none;
 }
 
+h1 {
+  font-weight: 600;
+}
+
+footer, button, input, .hidden {
+  font-weight: 200;
+}
+
 textarea, p {
-  font-family: "Moving";
-  font-variation-settings: 'wght'800, 'CNTR'500, 'slnt'0;
-  font-size: 7em;
+  font-family: "MARTy";
+  font-variation-settings: 'wght'500, 'CNTR'500, 'slnt'0;
+  font-size: 5rem;
   line-height: 1em;
 }
 
-textarea::placeholder {
-  font-family: system-ui;
-  font-weight: lighter;
-  font-variation-settings: 'wght'50;
-}
-
-button, button:hover, input, input:hover {
-  color: white;
-}
-
 /* Font color */
-html, header, h1, a {
+html, header, h1, a, button, input, h1:hover .hidden, footer:hover .hidden {
   color: black;
 }
 
-a:hover, h1:hover {
-  color: grey;
+button:hover, input:hover, .hidden {
+  color: white;
 }
 
 textarea, p {
   color: black;
-}
-
-textarea::placeholder {
-  color: lightgrey;
 }
 
 /* Background color */
 button, input {
-  background: lightgrey;
+  background: white;
 }
 
 button:hover, input:hover {
-  background: grey;
+  background: black;
 }
 
 /* Width */
@@ -69,7 +63,7 @@ header {
 }
 
 /* Position */
-input, .get-font-button {
+input {
   position: fixed;
   bottom: 2em;
 }
@@ -92,7 +86,7 @@ h1, textarea {
 }
 
 p {
-  margin: 0 0 .5em;
+  margin: 0 0 1em;
 }
 
 /* Padding */
@@ -110,7 +104,7 @@ textarea {
 
 /* Border */
 button, input {
-  border: none;
+  border: 1px solid black;
   border-radius: 1em;
 }
 
@@ -139,6 +133,10 @@ button:hover, input:hover {
   transition: background 500ms;
 }
 
-h1:hover, a:hover {
+h1:hover .hidden, a:hover .hidden {
+  transition: color 500ms;
+}
+
+a:hover {
   transition: color 500ms;
 }
