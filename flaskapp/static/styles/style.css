@@ -13,6 +13,7 @@ html, header, button, input, h1, a {
 
 h1 {
   font-weight: 600;
+  line-height: .6em;
 }
 
 footer, button, input, .hidden {
@@ -24,6 +25,12 @@ textarea, p {
   font-variation-settings: 'wght'500, 'CNTR'500, 'slnt'0;
   font-size: 5rem;
   line-height: 1em;
+}
+
+sup {
+  font-size: .7em;
+  font-weight: 600;
+  vertical-align: super;
 }
 
 /* Font color */

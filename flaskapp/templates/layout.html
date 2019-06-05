@@ -5,7 +5,7 @@
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}">
 
   {% if title %}
-    <title>MARTy-10^9 | {{ title }}</title>
+    <title>MARTy-10<sup>9</sup> | {{ title }}</title>
   {% else %}
     <title>MARTy-10^9</title>
   {% endif %}
@@ -16,7 +16,7 @@
 <body>
 <header>
   {% block header %}
-    <a id="home" href="/"><h1>MARTy-10^9<span class="hidden">&ensp;Machine-Augmented Responsive Typography</span></h1></a>
+    <a id="home" href="/"><h1>MARTy-10<sup>9</sup><span class="hidden">&ensp;Machine-Augmented Responsive Typography</span></h1></a>
     <a id="collection" href="/collection"><button>Collection</button></a>
   {% endblock header %}
 </header>
