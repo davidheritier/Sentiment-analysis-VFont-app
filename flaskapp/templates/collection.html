@@ -7,9 +7,17 @@
 
 {% block content %}
   {% for entries in entry %}
-    <p style="font-variation-settings: 'wght'{{ entries.value1 }}, 'CNTR'{{ entries.value2 }}, 'slnt'{{ entries.value3 }}">
-      {{ entries.txt }}
-    </p>
+    <a>
+      <p style="font-variation-settings: 'wght'{{ entries.value1 }}, 'CNTR'{{ entries.value2 }}, 'slnt'{{ entries.value3 }}">
+        {{ entries.txt }}
+      </p>
+
+      <p class="hidden info">
+        Polarity: {{ ((entries.value1 - 500) / 500) * 100 }} %
+        <br />
+        Subjectivity: {{ (entries.value3 / 800) * 100 }} %
+      </p>
+    </a>
   {% endfor %}
 
   <footer>

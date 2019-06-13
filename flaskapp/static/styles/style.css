@@ -5,7 +5,7 @@
   font-variation-settings: 'wght'0 1000, 'CNTR'0 1000, 'slnt'0 1000;
 }
 
-html, header, button, input, h1, a {
+html, header, button, input, h1, a, .hidden {
   font-family: system-ui;
   font-size: 2vh;
   text-decoration: none;
@@ -18,6 +18,8 @@ h1 {
 
 footer, button, input, .hidden {
   font-weight: 200;
+  font-variation-settings: 'wght'200;
+  line-height: normal
 }
 
 textarea, p {
@@ -33,8 +35,10 @@ sup {
   vertical-align: super;
 }
 
+
+
 /* Font color */
-html, header, h1, a, button, input, h1:hover .hidden, footer:hover .hidden {
+html, header, h1, a, button, input, h1:hover .hidden, footer:hover .hidden, a:hover .hidden {
   color: black;
 }
 
@@ -46,14 +50,18 @@ textarea, p {
   color: black;
 }
 
+
+
 /* Background color */
-button, input {
+button, input, .info {
   background: white;
 }
 
 button:hover, input:hover {
   background: black;
 }
+
+
 
 /* Width */
 header, main {
@@ -64,10 +72,18 @@ textarea {
   width: 100%;
 }
 
+.info {
+  width: 25%;
+}
+
+
+
 /* Height */
 header {
   height: 1.4em;
 }
+
+
 
 /* Position */
 input {
@@ -83,6 +99,8 @@ h1 {
   float: right;
 }
 
+
+
 /* Margin */
 header, main {
   margin: 3em auto 2em;
@@ -93,8 +111,14 @@ h1, textarea {
 }
 
 p {
-  margin: 0 0 1em;
+  margin: 0 0 .25em;
 }
+
+.info {
+  margin-bottom: 3em;
+}
+
+
 
 /* Padding */
 h1 {
@@ -109,6 +133,8 @@ textarea {
   padding: 0;
 }
 
+
+
 /* Border */
 button, input {
   border: 1px solid black;
@@ -119,21 +145,29 @@ textarea {
   border: none;
 }
 
+
+
 /* Outline */
 button, input, textarea {
   outline: none;
 }
+
+
 
 /* Button */
 button, input {
   cursor: pointer;
 }
 
+
+
 /* Textarea */
 textarea {
   resize: none;
   box-sizing: border-box;
 }
+
+
 
 /* Transition */
 button:hover, input:hover {
